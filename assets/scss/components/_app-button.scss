@@ -1,0 +1,17 @@
+$block: '.app-button';
+
+#{$block} {
+	background: var(--bg-button);
+	color: var(--color-button);
+	padding: 1.25rem 2.5rem;
+	border-radius: var(--radius-button);
+	font-size: var(--size-button);
+	transition: background 0.3s ease;
+	@include mobile {
+		padding: 0.625rem 1.25rem;
+	}
+	&:hover,
+	&:active {
+		background: var(--bg-button-active);
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"gb": {
+		"header": {
+			"navigation": {
+				"counter": "Counter",
+				"photos": "Photos",
+				"login": "Login"
+			}
+		},
+		"pages": {
+			"counter": {
+				"increment": "Increment",
+				"decrement": "Decrement"
+			},
+			"photos": {
+				"title": "Photos"
+			}
+		}
+	},
+	"de": {
+		"header": {
+			"navigation": {
+				"counter": "Schalter",
+				"photos": "Alles",
+				"login": "Anmeldung"
+			}
+		},
+		"pages": {
+			"counter": {
+				"increment": "Zuwachs",
+				"decrement": "Dekrementieren"
+			},
+			"photos": {
+				"title": "Fotos"
+			}
+		}
+	},
+	"it": {
+		"header": {
+			"navigation": {
+				"counter": "Il contatore",
+				"photos": "Fotografie",
+				"login": "Login"
+			}
+		},
+		"pages": {
+			"counter": {
+				"increment": "Incremento",
+				"decrement": "Decremento"
+			},
+			"photos": {
+				"title": "Fotografie"
+			}
+		}
+	}
+}
+

@@ -1,0 +1,70 @@
+.w-full {
+	width: 100%;
+}
+.h-full {
+	height: 100%;
+}
+.h-screen {
+	height: 100vh;
+}
+.d-flex {
+	display: flex;
+}
+.d-block {
+	display: block;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.flex-column {
+	flex-direction: column;
+}
+.items-center {
+	align-items: center;
+}
+.content-center {
+	justify-content: center;
+}
+.fixed {
+	position: fixed;
+}
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+.bottom-0 {
+	bottom: 0;
+}
+.right-0 {
+	right: 0;
+}
+.left-0 {
+	left: 0;
+}
+.top-0 {
+	top: 0;
+}
+.object-fit-contain {
+	object-fit: contain;
+}
+.apperance-none {
+	appearance: none;
+}
+.events-none {
+	pointer-events: none;
+}
+.pointer {
+	cursor: pointer;
+}
+.radius-rounded {
+	border-radius: 50%;
+}
+.absolute-y-center {
+	top: 50%;
+	transform: translateY(-50%);
+}
+.page-title {
+	font-size: var(--size-page-title);
+}
