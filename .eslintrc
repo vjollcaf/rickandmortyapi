@@ -4,7 +4,7 @@
 	"parserOptions": {
 		"parser": "@typescript-eslint/parser"
 	},
-	"extends": ["plugin:vue/strongly-recommended", "eslint:recommended", "@vue/eslint-config-typescript"],
+	"extends": ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
 	"rules": {
 		"@typescript-eslint/no-non-null-assertion": "error",
 		"@typescript-eslint/no-explicit-any": "off",

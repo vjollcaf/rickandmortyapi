@@ -1,25 +1,34 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "nuxt": "^3.7.3"
-  },
-  "dependencies": {
-    "@nuxt/image": "^1.0.0-rc.2",
-    "@pinia/nuxt": "^0.4.11",
-    "eslint": "^8.49.0",
-    "pinia": "^2.1.6",
-    "prettier": "^3.0.3"
-  }
+	"name": "nuxt-app",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"task:eslint:fix": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+		"task:prettier:fix": "prettier --write .",
+		"task:prettier:check": "prettier --check .",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "latest",
+		"husky": "^8.0.3",
+		"lint-staged": "^14.0.1",
+		"nuxt": "^3.7.3"
+	},
+	"dependencies": {
+		"@nuxt/image": "^1.0.0-rc.2",
+		"@nuxtjs/eslint-config-typescript": "^12.1.0",
+		"@pinia/nuxt": "^0.4.11",
+		"@trivago/prettier-plugin-sort-imports": "^4.2.0",
+		"@typescript-eslint/parser": "^6.7.0",
+		"eslint": "^8.49.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"pinia": "^2.1.6",
+		"prettier": "^3.0.3",
+		"typescript": "^5.2.2"
+	}
 }
