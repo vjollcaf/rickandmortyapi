@@ -9,7 +9,7 @@ enum HttpMethods {
 }
 
 interface HttpFunctions {
-	[key: string]: (url: string, options: any) => AsyncData<any, any>;
+	[key: string]: (url: string, options?: any) => AsyncData<any, any>;
 }
 
 export function useRequest(authRequest: boolean = true) {
@@ -27,7 +27,7 @@ export function useRequest(authRequest: boolean = true) {
 	const httpMethods: Array<string> = Object.keys(HttpMethods).filter((v) => isNaN(Number(v)));
 
 	for (const httpMethod of httpMethods) {
-		httpFunctions[httpMethod.toLowerCase()] = (url: string, options: any) => {
+		httpFunctions[httpMethod.toLowerCase()] = (url: string, options?: any) => {
 			return useFetch(url, {
 				method: httpMethod,
 				...handlers,
