@@ -1,3 +1,17 @@
+import { AsyncData, UseFetchOptions } from 'nuxt/app';
+
+enum HttpMethods {
+	POST,
+	GET,
+	PUT,
+	PATCH,
+	DELETE,
+}
+
+interface HttpFunctions {
+	[key: string]: (url: string, options: any) => AsyncData<any, any>;
+}
+
 export function useRequest(authRequest: boolean = true) {
 	const accessToken = useCookie('access_token');
 	const handlers = {
@@ -8,25 +22,19 @@ export function useRequest(authRequest: boolean = true) {
 			}
 		},
 	};
-	return {
-		get: (url: string, options: any) => {
+
+	const httpFunctions: HttpFunctions = {};
+	const httpMethods: Array<string> = Object.keys(HttpMethods).filter((v) => isNaN(Number(v)));
+
+	for (const httpMethod of httpMethods) {
+		httpFunctions[httpMethod.toLowerCase()] = (url: string, options: any) => {
 			return useFetch(url, {
-				method: 'GET',
+				method: httpMethod,
 				...handlers,
 				...options,
 			});
-		},
-		post: (url: string, options: any) => {
-			return useFetch(url, { method: 'POST', ...handlers, ...options });
-		},
-		put: (url: string, options: any) => {
-			return useFetch(url, { method: 'PUT', ...handlers, ...options });
-		},
-		delete: (url: string, options: any) => {
-			return useFetch(url, { method: 'DELETE', ...handlers, ...options });
-		},
-		patch: (url: string, options: any) => {
-			return useFetch(url, { method: 'PATCH', ...handlers, ...options });
-		},
-	};
+		};
+	}
+
+	return httpFunctions;
 }

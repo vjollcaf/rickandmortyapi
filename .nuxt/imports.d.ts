@@ -4,7 +4,7 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerSeoMeta, useServerHeadSafe } from '@unhead/vue';
 export { useModal } from '../composables/useModal';
 export { useRequest } from '../composables/useRequest';
-export { usePinia } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
+export { usePinia, defineStore, defineStore as definePiniaStore } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';
 export { useI18n } from '../node_modules/vue-i18n/dist/vue-i18n';
 export { useRouteBaseName, useLocalePath, useLocaleRoute, useSwitchLocalePath, useLocaleHead, useBrowserLocale, useCookieLocale, defineI18nRoute, defineI18nLocale, defineI18nConfig } from '../node_modules/@nuxtjs/i18n/dist/runtime/composables';
