@@ -1,7 +1,7 @@
-import locales from '@/lang/locales.json';
+import locales from '@/assets/locales.json';
 
 export default defineI18nConfig(() => ({
-    legacy: false,
-    locale: 'en',
-    messages: locales,
-  }))
+	legacy: false,
+	locale: 'en',
+	messages: locales,
+}));

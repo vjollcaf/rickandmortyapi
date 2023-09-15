@@ -18,6 +18,8 @@ declare module 'nuxt/schema' {
    },
   }
   interface PublicRuntimeConfig {
+   apiUrl: string,
+
    i18n: {
       experimental: {
          jsTsFormatResource: boolean,

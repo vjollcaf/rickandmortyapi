@@ -48,6 +48,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
+    "apiUrl": "https://jsonplaceholder.typicode.com",
     "i18n": {
       "experimental": {
         "jsTsFormatResource": false

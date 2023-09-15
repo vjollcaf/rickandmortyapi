@@ -109,6 +109,7 @@ declare global {
   const useLocaleHead: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocaleHead']
   const useLocalePath: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocalePath']
   const useLocaleRoute: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocaleRoute']
+  const useModal: typeof import('../../composables/useModal')['useModal']
   const useModel: typeof import('../../node_modules/vue')['useModel']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']
   const useNuxtData: typeof import('../../node_modules/nuxt/dist/app')['useNuxtData']
@@ -258,6 +259,7 @@ declare module 'vue' {
     readonly useLocaleHead: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocaleHead']>
     readonly useLocalePath: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocalePath']>
     readonly useLocaleRoute: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocaleRoute']>
+    readonly useModal: UnwrapRef<typeof import('../../composables/useModal')['useModal']>
     readonly useModel: UnwrapRef<typeof import('../../node_modules/vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtData']>
@@ -401,6 +403,7 @@ declare module '@vue/runtime-core' {
     readonly useLocaleHead: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocaleHead']>
     readonly useLocalePath: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocalePath']>
     readonly useLocaleRoute: UnwrapRef<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables')['useLocaleRoute']>
+    readonly useModal: UnwrapRef<typeof import('../../composables/useModal')['useModal']>
     readonly useModel: UnwrapRef<typeof import('../../node_modules/vue')['useModel']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useNuxtData']>
