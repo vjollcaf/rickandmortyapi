@@ -11,7 +11,6 @@ export const useAuthStore = defineStore('auth', () => {
 	// Methods
 	function login() {
 		// Request to login...
-		// await api.post('/login', { email, password })
 
 		accessToken.value = window.localStorage.getItem('access_token') || '';
 	}
