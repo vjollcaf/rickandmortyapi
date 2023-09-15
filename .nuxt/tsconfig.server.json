@@ -51,6 +51,9 @@
       "public/*": [
         "../public/*"
       ],
+      "pinia": [
+        "../node_modules/pinia/dist/pinia"
+      ],
       "#image": [
         "../node_modules/@nuxt/image/dist/runtime"
       ],

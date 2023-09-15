@@ -16,7 +16,7 @@
     "nuxt": "^3.7.3"
   },
   "dependencies": {
-    "@nuxt/image": "^0.7.1",
+    "@nuxt/image": "^1.0.0-rc.2",
     "@pinia/nuxt": "^0.4.11",
     "eslint": "^8.49.0",
     "pinia": "^2.1.6",
