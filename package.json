@@ -10,12 +10,13 @@
 		"task:eslint:fix": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
 		"task:prettier:fix": "prettier --write .",
 		"task:prettier:check": "prettier --check .",
-		"postinstall": "nuxt prepare"
+		"postinstall": "nuxt prepare",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@nuxt/devtools": "latest",
 		"@nuxtjs/i18n": "^8.0.0-rc.4",
-		"husky": "^8.0.3",
+		"husky": "^8.0.0",
 		"lint-staged": "^14.0.1",
 		"nuxt": "^3.7.3"
 	},
@@ -33,5 +34,12 @@
 		"prettier": "^3.0.3",
 		"sass": "^1.67.0",
 		"typescript": "^5.2.2"
-	}
+	}, 
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,vue}": [
+		  "prettier --write",
+		  "eslint --ext \".ts,.vue\""
+		]
+	  }
+	
 }

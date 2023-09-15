@@ -1,4 +1,4 @@
-import { AsyncData, UseFetchOptions } from 'nuxt/app';
+import { AsyncData } from 'nuxt/app';
 
 enum HttpMethods {
 	POST,
