@@ -1,0 +1,22 @@
+{
+	"root": true,
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser"
+	},
+	"extends": ["plugin:vue/strongly-recommended", "eslint:recommended", "@vue/eslint-config-typescript"],
+	"rules": {
+		"@typescript-eslint/no-non-null-assertion": "error",
+		"@typescript-eslint/no-explicit-any": "off",
+		"linebreak-style": ["error", "unix"],
+		"vue/max-attributes-per-line": 0,
+		"no-mixed-spaces-and-tabs": 0,
+		"vue/no-multiple-template-root": 0,
+		"vue/singleline-html-element-content-newline": 0,
+		"vue/html-self-closing": 0,
+		"@typescript-eslint/no-unused-vars": ["off"],
+		"vue/multi-word-component-names": 0,
+		"vue/html-indent": 0,
+		"no-debugger": "off"
+	}
+}

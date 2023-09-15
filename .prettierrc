@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json.schemastore.org/prettierrc",
+	"tabWidth": 2,
+	"singleQuote": true,
+	"bracketSameLine": true, 
+	"bracketSpacing": true,
+	"useTabs": true, 
+	"trailingComma": "es5",
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
+	"printWidth": 120,
+	"importOrder": [
+		"^(vue|vue-router|vue-i18n|pinia)$",
+		"providers",
+		"store", 
+		"composables", 
+		"helpers", 
+		"types",
+		"assets"
+	],
+	"importOrderSortSpecifiers": true, 
+	"importOrderCaseInsensitive": true
+}

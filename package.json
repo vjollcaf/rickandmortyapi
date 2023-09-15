@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "nuxt": "^3.7.3"
+  },
+  "dependencies": {
+    "@nuxt/image": "^0.7.1",
+    "@pinia/nuxt": "^0.4.11",
+    "eslint": "^8.49.0",
+    "pinia": "^2.1.6",
+    "prettier": "^3.0.3"
+  }
+}
