@@ -7,21 +7,25 @@ const auth = useAuthStore();
 <template>
 	<nav class="app-header-navigation">
 		<ul class="d-flex items-center">
-			<li class="app-header-navigation__item">
-				<RouterLink class="app-header-navigation__link" to="/">
-					{{ $t('header.navigation.counter') }}
-				</RouterLink>
-			</li>
-			<li class="app-header-navigation__item">
-				<RouterLink class="app-header-navigation__link" to="/photos">
-					{{ $t('header.navigation.photos') }}
-				</RouterLink>
-			</li>
-			<li v-if="!auth.isLogged" class="app-header-navigation__item">
-				<RouterLink class="app-header-navigation__link" to="/login">
-					{{ $t('header.navigation.login') }}
-				</RouterLink>
-			</li>
+			<template v-if="auth.isLogged">
+				<li class="app-header-navigation__item">
+					<RouterLink class="app-header-navigation__link" to="/">
+						{{ $t('header.navigation.counter') }}
+					</RouterLink>
+				</li>
+				<li class="app-header-navigation__item">
+					<RouterLink class="app-header-navigation__link" to="/photos">
+						{{ $t('header.navigation.photos') }}
+					</RouterLink>
+				</li>
+			</template>
+			<template v-else>
+				<li class="app-header-navigation__item">
+					<RouterLink class="app-header-navigation__link" to="/login">
+						{{ $t('header.navigation.login') }}
+					</RouterLink>
+				</li>
+			</template>
 		</ul>
 	</nav>
 </template>
