@@ -14,6 +14,9 @@ interface HttpFunctions {
 
 export function useRequest(authRequest: boolean = true) {
 	const accessToken = useCookie('access_token');
+	const runtimeConfig = useRuntimeConfig();
+	const baseURL = runtimeConfig.public.apiUrl || '';
+
 	const handlers = {
 		onRequest({ options }: any) {
 			options.headers = options.headers || {};
@@ -28,7 +31,8 @@ export function useRequest(authRequest: boolean = true) {
 
 	for (const httpMethod of httpMethods) {
 		httpFunctions[httpMethod.toLowerCase()] = (url: string, options?: any) => {
-			return useFetch(url, {
+			const fullUrlPath = baseURL + url;
+			return useFetch(fullUrlPath, {
 				method: httpMethod,
 				...handlers,
 				...options,

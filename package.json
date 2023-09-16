@@ -30,16 +30,16 @@
 		"eslint": "^8.49.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-prettier": "^5.0.0",
+		"flag-icons": "^6.11.0",
 		"pinia": "^2.1.6",
 		"prettier": "^3.0.3",
 		"sass": "^1.67.0",
 		"typescript": "^5.2.2"
-	}, 
+	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,vue}": [
-		  "prettier --write",
-		  "eslint --ext \".ts,.vue\""
+			"prettier --write",
+			"eslint --ext \".ts,.vue\""
 		]
-	  }
-	
+	}
 }

@@ -14,6 +14,6 @@ defineProps<Props>();
 <template>
 	<article class="app-photo" @click="modalAction(!showModal)">
 		<AppModal :show-modal="showModal" :thumbnail-url="photo.thumbnailUrl" />
-		<img class="w-full h-full object-fit-contain" :src="photo.thumbnailUrl" alt="album photo" />
+		<NuxtImg class="w-full h-full object-fit-contain" :src="photo.thumbnailUrl" alt="album photo" />
 	</article>
 </template>

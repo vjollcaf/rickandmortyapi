@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import { IPhoto } from '../types';
-
-const { $axios } = useNuxtApp();
+import { IPhoto } from '@/types';
 
 export const usePhotosStore = defineStore('photos', () => {
+	const { $axios } = useNuxtApp();
+
 	// Data
 	const photos = ref<IPhoto[]>([]);
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'flag-icons';
 import { computed } from 'vue';
 import locales from '@/assets/locales.json';
 
