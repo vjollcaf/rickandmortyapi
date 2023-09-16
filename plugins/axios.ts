@@ -25,7 +25,7 @@ export default defineNuxtPlugin(() => {
 
 	return {
 		provide: {
-			axios: () => axiosInstance,
+			axios: axiosInstance,
 		},
 	};
 });

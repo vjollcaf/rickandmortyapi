@@ -11,7 +11,7 @@ export const usePhotosStore = defineStore('photos', () => {
 	// Methods
 	async function fetchPhotos() {
 		try {
-			const { data } = await $axios().get('/photos?_limit=50');
+			const { data } = await $axios.get('/photos?_limit=50');
 			photos.value = data;
 		} catch (err) {
 			console.error(err);
