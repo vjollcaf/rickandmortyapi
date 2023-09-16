@@ -24,7 +24,6 @@ coverage
 *.local
 
 .env
-.env.staging
 
 /cypress/videos/
 /cypress/screenshots/
