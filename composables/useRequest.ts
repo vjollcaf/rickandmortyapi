@@ -32,14 +32,14 @@ export function useRequest(config?: useRequestOptions) {
 	const authRequest = config?.authRequest ? config.authRequest : true;
 
 	return async (
-		options?: useRequestOptions & { prefix: string } & UseFetchOptions<any>,
+		options?: useRequestOptions & { route: string } & UseFetchOptions<any>,
 		onRequestHandler?: Function,
 		onResponseHandler?: Function,
 		onResponseErrorHandler?: Function
 	) => {
-		const { authRequest: authReq, baseUrl, prefix, ...restConfig } = options || {};
+		const { authRequest: authReq, baseUrl, route, ...restConfig } = options || {};
 
-		const url = (options?.baseUrl ? options?.baseUrl : baseURL) + options?.prefix;
+		const url = (options?.baseUrl ? options?.baseUrl : baseURL) + options?.route;
 		const auth = authReq || authRequest;
 
 		const handlers = {

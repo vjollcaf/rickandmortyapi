@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { useCounterStore } from '../stores/counter';
-import { useRequest } from '@/composables';
 
-const request = await useRequest({ baseUrl: 'https://jsonplaceholder.typicode.com' });
-const { data } = await request({ prefix: '/posts', pick: ['title'] });
 const count = useCounterStore();
 </script>
 <template>

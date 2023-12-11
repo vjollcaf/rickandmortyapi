@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import { useRequest } from '@/composables';
 import { IPhoto } from '@/types';
 
 export const usePhotosStore = defineStore('photos', () => {
-	const { $axios } = useNuxtApp();
+	const imageRequest = useRequest();
 
 	// Data
 	const photos = ref<IPhoto[]>([]);
@@ -11,8 +12,8 @@ export const usePhotosStore = defineStore('photos', () => {
 	// Methods
 	async function fetchPhotos() {
 		try {
-			const { data } = await $axios.get('/photos?_limit=50');
-			photos.value = data;
+			const { data } = await imageRequest({ route: '/photos?_limit=50' });
+			photos.value = data.value as IPhoto[];
 		} catch (err) {
 			console.error(err);
 		}
