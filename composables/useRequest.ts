@@ -1,44 +1,84 @@
 import { AsyncData } from 'nuxt/app';
+import { WatchSource } from 'nuxt/dist/app/compat/capi';
 
-enum HttpMethods {
-	POST,
-	GET,
-	PUT,
-	PATCH,
-	DELETE,
+interface useRequestOptions {
+	authRequest?: boolean;
+	baseUrl?: string;
 }
 
-interface HttpFunctions {
-	[key: string]: (url: string, options?: any) => AsyncData<any, any>;
-}
+type UseFetchOptions<DataT> = {
+	key?: string;
+	method?: string;
+	query?: any;
+	params?: any;
+	body?: RequestInit['body'] | Record<string, any>;
+	headers?: Record<string, string> | [key: string, value: string][] | Headers;
+	baseURL?: string;
+	server?: boolean;
+	lazy?: boolean;
+	immediate?: boolean;
+	getCachedData?: (key: string) => DataT;
+	deep?: boolean;
+	default?: () => DataT;
+	transform?: (input: DataT) => DataT;
+	pick?: string[];
+	watch?: WatchSource[] | false;
+};
 
-export function useRequest(authRequest: boolean = true) {
+export function useRequest(config?: useRequestOptions) {
 	const accessToken = useCookie('access_token');
 	const runtimeConfig = useRuntimeConfig();
-	const baseURL = runtimeConfig.public.apiUrl || '';
+	const baseURL = config?.baseUrl ? config.baseUrl : runtimeConfig.public.apiUrl || '';
+	const authRequest = config?.authRequest ? config.authRequest : true;
 
-	const handlers = {
-		onRequest({ options }: any) {
-			options.headers = options.headers || {};
-			if (authRequest) {
-				options.headers.authorization = accessToken.value;
-			}
-		},
-	};
+	return async (
+		options?: useRequestOptions & { prefix: string } & UseFetchOptions<any>,
+		onRequestHandler?: Function,
+		onResponseHandler?: Function,
+		onResponseErrorHandler?: Function
+	) => {
+		const { authRequest: authReq, baseUrl, prefix, ...restConfig } = options || {};
 
-	const httpFunctions: HttpFunctions = {};
-	const httpMethods: Array<string> = Object.keys(HttpMethods).filter((v) => isNaN(Number(v)));
+		const url = (options?.baseUrl ? options?.baseUrl : baseURL) + options?.prefix;
+		const auth = authReq || authRequest;
 
-	for (const httpMethod of httpMethods) {
-		httpFunctions[httpMethod.toLowerCase()] = (url: string, options?: any) => {
-			const fullUrlPath = baseURL + url;
-			return useFetch(fullUrlPath, {
-				method: httpMethod,
-				...handlers,
-				...options,
-			});
+		const handlers = {
+			onRequest({ options }: any) {
+				if (typeof onRequestHandler === 'function') {
+					onRequestHandler(options);
+					return;
+				}
+
+				options.headers = options.headers || {};
+				if (auth) {
+					options.headers.authorization = accessToken.value;
+				}
+			},
+			onResponse({ request, response, options }: any) {
+				if (typeof onResponseHandler === 'function') {
+					onResponseHandler(request, response, options);
+					return;
+				}
+
+				console.info('onResponse, request', request);
+				console.info('onResponse, response', response);
+				console.info('response, options', options);
+			},
+			onResponseError({ request, response, options }: any) {
+				if (typeof onResponseErrorHandler === 'function') {
+					onResponseErrorHandler(request, response, options);
+					return;
+				}
+
+				if (response.status === 401 && auth) {
+					// Logout
+					accessToken.value = '';
+				}
+			},
 		};
-	}
-
-	return httpFunctions;
+		return await useFetch(url, {
+			...handlers,
+			...(restConfig || {}),
+		});
+	};
 }
