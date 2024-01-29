@@ -1,5 +1,4 @@
-import { AsyncData } from 'nuxt/app';
-import { WatchSource } from 'nuxt/dist/app/compat/capi';
+import type { WatchSource } from 'nuxt/dist/app/compat/capi';
 
 interface useRequestOptions {
 	authRequest?: boolean;
