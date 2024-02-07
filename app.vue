@@ -1,8 +1,8 @@
 <template>
-	<div>
+	<div class="default container">
 		<AppHeader />
-		<NuxtPage />
-		<AppLanguageToggler />
-		<AppThemeToggler />
+		<div class="default-container">
+			<NuxtPage />
+		</div>
 	</div>
 </template>

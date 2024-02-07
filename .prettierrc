@@ -6,17 +6,5 @@
 	"bracketSpacing": true,
 	"useTabs": true,
 	"trailingComma": "es5",
-	"plugins": ["@trivago/prettier-plugin-sort-imports"],
-	"printWidth": 120,
-	"importOrder": [
-		"^(vue|vue-router|vue-i18n|pinia)$",
-		"providers",
-		"store",
-		"composables",
-		"helpers",
-		"types",
-		"assets"
-	],
-	"importOrderSortSpecifiers": true,
-	"importOrderCaseInsensitive": true
+	"printWidth": 120
 }

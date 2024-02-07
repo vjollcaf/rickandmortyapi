@@ -1,0 +1,85 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 210px;
+	color: white;
+	background: #fff;
+	box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 999;
+}
+
+.logo img {
+	max-width: 100px;
+	/* Adjust the max-width as needed */
+}
+
+.navigation {
+	display: flex;
+	gap: 25px;
+	&__link {
+		@include rem(font-size, $font-size-md);
+		color: $black;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-decoration: none;
+		margin-left: 1rem;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			/* Styles for hover and focus states */
+			text-decoration: underline;
+		}
+	}
+}
+
+// those styling will go in global or component scss
+.details-top {
+	display: flex;
+	align-items: center;
+	@include rem(padding, 30px, 20px);
+}
+.details-title {
+	flex: 0 0 70%;
+	display: flex;
+	justify-content: center;
+	color: #081f32;
+	font-family: 'Roboto';
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.go-back {
+	&-wrap {
+		flex: 0 0 30%;
+		display: flex;
+		gap: 27px;
+		a {
+			color: #000;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+	}
+	&::before {
+		content: '';
+		width: 24px;
+		height: 24px;
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z' fill='black'/%3E%3C/svg%3E%0A");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+		position: absolute;
+	}
+}
+
+.info {
+	display: flex;
+	justify-content: center;
+	gap: 100px;
+}

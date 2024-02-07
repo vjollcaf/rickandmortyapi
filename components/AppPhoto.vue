@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppModal from './AppModal.vue';
 import { useModal } from '@/composables';
-import { IPhoto } from '@/types';
+import { type IPhoto } from '~/types';
 
 const { showModal, modalAction } = useModal();
 

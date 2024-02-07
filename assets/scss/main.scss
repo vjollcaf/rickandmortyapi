@@ -1,4 +1,10 @@
 @import './partials/reset';
 @import './partials/utils';
+@import './partials/variables';
 @import './base';
 @import './components/app-button';
+@import './components/header';
+@import './components/card';
+@import './pages/character';
+@import './pages/locations';
+@import './components/filters';

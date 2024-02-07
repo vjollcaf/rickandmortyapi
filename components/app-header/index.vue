@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import AppHeaderNavigation from './AppHeaderNavigation.vue';
+// import AppHeaderNavigation from './AppHeaderNavigation.vue';
+import AppHeader from './AppHeader.vue';
 </script>
 <template>
 	<header class="app-header container">
-		<AppHeaderNavigation />
+		<!-- <AppHeaderNavigation /> -->
+		second
+		<AppHeader />
 	</header>
 </template>
 <style scoped lang="scss">

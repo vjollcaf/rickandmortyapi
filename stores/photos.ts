@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import { useRequest } from '@/composables';
-import { IPhoto } from '@/types';
+import { type IPhoto } from '@/types';
 
 export const usePhotosStore = defineStore('photos', () => {
 	const imageRequest = useRequest();
