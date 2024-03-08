@@ -1,7 +1,6 @@
 <template>
 	<div class="characters-home">
 		<img src="/banner-img.png" alt="" srcset="" />
-		// eslint-disable-next-line vue/v-on-event-hyphenation
 		<FilterComponent :filtertype="'characters'" @apply-filters="applyCharacterFilters" />
 		<Card :items="store.characters" :type="'characters'" />
 	</div>

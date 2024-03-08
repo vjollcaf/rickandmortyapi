@@ -42,6 +42,7 @@
 	&.episode {
 		overflow-y: scroll;
 		height: 270px;
+		padding: 40px;
 		&::-webkit-scrollbar {
 			width: 5px;
 		}

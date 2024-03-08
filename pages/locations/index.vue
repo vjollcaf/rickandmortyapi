@@ -4,28 +4,35 @@
 			<img src="/location-banner.jpg" alt="" srcset="" />
 			<FilterComponent :filtertype="'locations'" />
 		</div>
+		<loading :loading="isLoading"></loading>
 		<Card :items="location.locations" :type="'locations'" />
-		<div v-if="currentPage < location.totalPages" class="load-more">
-			<button class="btn btn-loadmore" @click="loadMore">Load More</button>
+		<div v-if="currentPage < location.totalPages && !isLoading" class="load-more">
+			<button class="btn btn-loadmore" @click="loadMore">{{ isLoading ? '...' : 'Load More' }}</button>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import Card from '~/components/Card.vue';
 import FilterComponent from '~/components/FilterComponent.vue';
 import { useLocationsStore } from '~/stores/locations';
 
 const location = useLocationsStore();
 const currentPage = ref(1);
+const isLoading = ref(false);
 
 const loadMore = async () => {
+	isLoading.value = true;
 	currentPage.value += 1;
 	await location.fetchLocations(currentPage.value);
+	isLoading.value = false;
 };
 
 onMounted(async () => {
+	isLoading.value = true;
 	await location.fetchLocations();
+	isLoading.value = false;
 });
 
 // Debounce function implementation

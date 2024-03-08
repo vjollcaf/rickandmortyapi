@@ -36,13 +36,14 @@
 
 	.filter-input,
 	.filter-select {
-		width: calc(100% - 16px);
+		width: 100%;
 		box-sizing: border-box;
 		padding: 8px;
 		border: 1px solid rgba(0, 0, 0, 0.54);
 		border-radius: 6px;
 		transition: border-color 0.3s ease-in-out;
 		padding: 16px 35px;
+
 
 		&:focus {
 			border-color: #3498db;
@@ -61,7 +62,7 @@
 			border-top: 8px solid rgba(0, 0, 0, 0.54);
 			position: absolute;
 			top: 51%;
-			right: 20px; // Adjust the distance from the right as needed
+			right: 4px;
 			transform: translateY(-50%);
 			pointer-events: none;
 		}
